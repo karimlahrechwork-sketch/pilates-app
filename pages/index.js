@@ -70,13 +70,13 @@ export default function Home() {
 
   return (
     <Layout>
-      <Head><title>Pilātis — Home</title></Head>
+      <Head><title>Kathrens Pilates — Home</title></Head>
       <div className={styles.page}>
         <div className={styles.hero}>
           <div className={styles.heroBg} />
           <div className={styles.heroContent}>
             <p className={styles.greeting}>{greeting}, {userName} ✦</p>
-            <h1 className={styles.heroTitle}>Your Pilates<br /><em>Journey</em></h1>
+            <h1 className={styles.heroTitle}>Kathrens<br /><em>Pilates</em></h1>
             <p className={styles.heroSub}>{new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
           </div>
         </div>

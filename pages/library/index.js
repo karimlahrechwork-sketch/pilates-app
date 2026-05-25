@@ -14,7 +14,7 @@ export default function Library() {
 
   return (
     <Layout>
-      <Head><title>Pilātis — Library</title></Head>
+      <Head><title>Kathrens Pilates — Library</title></Head>
       <div className={styles.page}>
         <div className={styles.header}>
           <h1 className={styles.title}>Exercise <em>Library</em></h1>

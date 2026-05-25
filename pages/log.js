@@ -47,7 +47,7 @@ export default function Log() {
 
   return (
     <Layout>
-      <Head><title>Pilātis — Log Workout</title></Head>
+      <Head><title>Kathrens Pilates — Log Workout</title></Head>
       <div className={styles.page}>
         <div className={styles.header}>
           <h1 className={styles.title}>Log a <em>Workout</em></h1>

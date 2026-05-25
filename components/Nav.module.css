@@ -16,26 +16,42 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  text-decoration: none;
 }
 
-.logoMark {
-  font-size: 20px;
-  color: var(--sage);
-  animation: spin 12s linear infinite;
+.logo svg {
+  flex-shrink: 0;
+  animation: slowspin 20s linear infinite;
+  transform-origin: center;
 }
 
-@keyframes spin {
+@keyframes slowspin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 .logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoName {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-size: 18px;
+  font-weight: 500;
   color: var(--ink);
+  letter-spacing: 0.03em;
+}
+
+.logoPilates {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--sage-dark);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .links {
@@ -66,16 +82,13 @@
   color: white;
 }
 
-.icon {
-  font-size: 12px;
-}
-
-.label {
-  letter-spacing: 0.02em;
-}
+.icon { font-size: 12px; }
+.label { letter-spacing: 0.02em; }
 
 @media (max-width: 600px) {
   .nav { padding: 0 1rem; }
   .label { display: none; }
   .link { padding: 8px 10px; }
+  .logoPilates { display: none; }
+  .logoName { font-size: 16px; }
 }

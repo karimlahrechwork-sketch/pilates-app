@@ -22,7 +22,7 @@ export default function ExerciseDetail({ exercise }) {
 
   return (
     <Layout>
-      <Head><title>Pilātis — {exercise.name}</title></Head>
+      <Head><title>Kathrens Pilates — {exercise.name}</title></Head>
       <div className={styles.page}>
         <Link href="/library" className={styles.back}>← Library</Link>
 

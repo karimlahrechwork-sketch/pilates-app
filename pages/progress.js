@@ -58,7 +58,7 @@ export default function Progress() {
 
   return (
     <Layout>
-      <Head><title>Pilātis — Progress</title></Head>
+      <Head><title>Kathrens Pilates — Progress</title></Head>
       <div className={styles.page}>
         <div className={styles.header}>
           <h1 className={styles.title}>Your <em>Progress</em></h1>
