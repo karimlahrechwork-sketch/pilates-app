@@ -234,8 +234,6 @@ export const exercises = [
     ],
     tip: "If your lower back arches when you extend your legs, raise them higher toward the ceiling. Only lower them as far as you can keep your back flat.",
   },
-]
-
   {
     id: 'plank-twist',
     name: 'Plank Twist',
