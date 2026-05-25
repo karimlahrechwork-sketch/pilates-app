@@ -1,0 +1,146 @@
+.page { padding: 2rem; max-width: 700px; margin: 0 auto; padding-bottom: 3rem; }
+
+.header { margin-bottom: 1.5rem; }
+.title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 52px); font-weight: 300; color: var(--ink); margin-bottom: 4px; }
+.title em { color: var(--sage); font-style: italic; }
+.sub { font-size: 13px; color: var(--muted); }
+
+.successBanner {
+  background: var(--sage-light);
+  border: 1px solid rgba(122, 158, 126, 0.4);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  color: var(--sage-dark);
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.modeToggle {
+  display: flex;
+  background: var(--warm);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+  gap: 4px;
+}
+
+.modeBtn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modeActive { background: white; color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+.section { margin-bottom: 1.75rem; }
+
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 0.75rem; }
+
+.planGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.planCard {
+  background: white;
+  border: 1px solid rgba(196, 185, 168, 0.4);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  text-align: left;
+  border-left: 3px solid var(--plan-color, var(--sage));
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.planCard:hover { background: var(--warm); }
+.planSelected { background: var(--sage-light) !important; border-color: var(--sage) !important; }
+
+.planName { font-size: 14px; font-weight: 500; color: var(--ink); }
+.planMeta { font-size: 12px; color: var(--muted); }
+
+.exGrid { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.exBtn {
+  padding: 8px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(196, 185, 168, 0.5);
+  background: white;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exBtn:hover { background: var(--warm); color: var(--ink); }
+.exSelected { background: var(--sage) !important; border-color: var(--sage) !important; color: white !important; }
+
+.durationRow { display: flex; align-items: center; gap: 1rem; }
+
+.slider { flex: 1; accent-color: var(--sage); }
+
+.durationVal { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--ink); min-width: 60px; }
+
+.textarea {
+  width: 100%;
+  border: 1px solid rgba(196, 185, 168, 0.4);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: white;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.textarea:focus { border-color: var(--sage); }
+.textarea::placeholder { color: var(--stone); }
+
+.saveBtn {
+  width: 100%;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.saveBtn:hover { background: var(--sage-dark); }
+
+.recentList { display: flex; flex-direction: column; gap: 8px; }
+
+.recentItem {
+  background: white;
+  border: 1px solid rgba(196, 185, 168, 0.3);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recentName { font-size: 14px; color: var(--ink); display: block; margin-bottom: 2px; }
+.recentDate { font-size: 12px; color: var(--muted); }
+.recentDur { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--sage); }
+
+@media (max-width: 600px) {
+  .page { padding: 1.25rem; }
+  .planGrid { grid-template-columns: 1fr; }
+}

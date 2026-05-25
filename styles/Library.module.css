@@ -1,0 +1,81 @@
+.page { padding: 2rem; max-width: 700px; margin: 0 auto; padding-bottom: 3rem; }
+
+.header { margin-bottom: 1.5rem; }
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.title em { color: var(--sage); font-style: italic; }
+.sub { font-size: 13px; color: var(--muted); }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.filter {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(196, 185, 168, 0.5);
+  background: white;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter:hover { background: var(--warm); color: var(--ink); }
+.filter.active { background: var(--sage); border-color: var(--sage); color: white; }
+
+.grid { display: flex; flex-direction: column; gap: 10px; }
+
+.card {
+  background: white;
+  border: 1px solid rgba(196, 185, 168, 0.4);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.card:hover { transform: translateX(4px); border-color: var(--sage); }
+
+.cardIcon { font-size: 28px; flex-shrink: 0; }
+
+.cardBody { flex: 1; }
+
+.cardName {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.cardDesc { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.5; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.tag {
+  background: var(--warm);
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.arrow { color: var(--stone); font-size: 18px; align-self: center; }
+
+@media (max-width: 600px) {
+  .page { padding: 1.25rem; }
+}
