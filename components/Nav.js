@@ -7,6 +7,7 @@ const links = [
   { href: '/library', label: 'Library', icon: '◉' },
   { href: '/progress', label: 'Progress', icon: '◎' },
   { href: '/log', label: 'Log', icon: '⊕' },
+  { href: '/badges', label: 'Badges', icon: '✦' },
 ]
 
 const FlowerLogo = () => (
@@ -24,7 +25,7 @@ const FlowerLogo = () => (
   </svg>
 )
 
-export default function Nav() {
+export default function Nav({ badgeNotify }) {
   const router = useRouter()
   return (
     <nav className={styles.nav}>
@@ -40,6 +41,9 @@ export default function Nav() {
           <Link key={l.href} href={l.href} className={`${styles.link} ${router.pathname === l.href ? styles.active : ''}`}>
             <span className={styles.icon}>{l.icon}</span>
             <span className={styles.label}>{l.label}</span>
+            {l.href === '/badges' && badgeNotify > 0 && (
+              <span className={styles.dot}>{badgeNotify}</span>
+            )}
           </Link>
         ))}
       </div>

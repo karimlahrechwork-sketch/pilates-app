@@ -1,0 +1,165 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 40, 37, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.show { opacity: 1; }
+
+.confettiWrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.card {
+  background: var(--cream);
+  border-radius: 28px;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(44, 40, 37, 0.2);
+  transform: scale(0.85) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.cardIn { transform: scale(1) translateY(0); }
+
+.badgeWrap {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--badge-light);
+  border: 3px solid var(--badge-color);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.7; }
+}
+
+.badgeEmoji {
+  font-size: 44px;
+  position: relative;
+  z-index: 1;
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+@keyframes popIn {
+  from { transform: scale(0) rotate(-10deg); }
+  to { transform: scale(1) rotate(0deg); }
+}
+
+.sparkles {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+  color: var(--badge-color);
+  font-size: 14px;
+}
+
+.sparkle {
+  display: inline-block;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.congrats {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--badge-color);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.badgeName {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.streakPill {
+  display: inline-block;
+  background: var(--badge-light);
+  color: var(--badge-color);
+  border: 1px solid var(--badge-color);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.message {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  font-style: italic;
+}
+
+.closeBtn {
+  background: var(--badge-color);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 12px 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+}
+
+.closeBtn:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .card { padding: 2rem 1.5rem 1.5rem; }
+  .badgeName { font-size: 28px; }
+}

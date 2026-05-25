@@ -85,6 +85,21 @@
 .icon { font-size: 12px; }
 .label { letter-spacing: 0.02em; }
 
+.dot {
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 100px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  margin-left: 2px;
+}
+
 @media (max-width: 600px) {
   .nav { padding: 0 1rem; }
   .label { display: none; }
