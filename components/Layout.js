@@ -1,4 +1,5 @@
 import Nav from './Nav'
+import AmbientPlayer from './AmbientPlayer'
 import styles from './Layout.module.css'
 
 export default function Layout({ children }) {
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
       <main className={styles.main}>
         {children}
       </main>
+      <AmbientPlayer />
     </div>
   )
 }

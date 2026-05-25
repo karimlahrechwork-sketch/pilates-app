@@ -1,0 +1,172 @@
+.player {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(196, 185, 168, 0.45);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(44, 40, 37, 0.1);
+  z-index: 200;
+  min-width: 220px;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.playBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--sage-light);
+  color: var(--sage-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.playBtn:hover { background: var(--sage); color: white; transform: scale(1.05); }
+.playBtn.playing { background: var(--sage); color: white; }
+
+.pauseIcon {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.pauseIcon span {
+  width: 3px;
+  height: 12px;
+  background: currentColor;
+  border-radius: 2px;
+  display: block;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.moodIcon { font-size: 16px; flex-shrink: 0; }
+
+.moodLabel {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.nowPlaying {
+  font-size: 11px;
+  color: var(--sage-dark);
+  font-style: italic;
+}
+
+.expandBtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.expandBtn:hover { color: var(--ink); }
+
+.drawer {
+  padding: 0 12px 14px;
+  border-top: 1px solid rgba(196, 185, 168, 0.25);
+}
+
+.moods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  padding-top: 12px;
+  margin-bottom: 12px;
+}
+
+.moodBtn {
+  background: var(--warm);
+  border: 1px solid rgba(196, 185, 168, 0.35);
+  border-radius: 12px;
+  padding: 9px 10px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.moodBtn:hover { background: var(--sage-light); border-color: var(--sage); }
+.moodActive { background: var(--sage-light) !important; border-color: var(--sage) !important; }
+
+.moodBtnIcon { font-size: 16px; margin-bottom: 2px; }
+.moodBtnLabel { font-size: 12px; font-weight: 500; color: var(--ink); }
+.moodBtnDesc { font-size: 11px; color: var(--muted); }
+
+.volumeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.volSlider {
+  flex: 1;
+  accent-color: var(--sage);
+  height: 3px;
+}
+
+.volVal {
+  font-size: 11px;
+  color: var(--muted);
+  min-width: 28px;
+  text-align: right;
+}
+
+.visualiser {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 24px;
+  margin-top: 12px;
+}
+
+.bar2 {
+  width: 3px;
+  border-radius: 3px;
+  background: var(--sage);
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { height: 4px; opacity: 0.4; }
+  50% { height: 18px; opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .player {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    min-width: unset;
+  }
+  .moods { grid-template-columns: 1fr 1fr; }
+}
