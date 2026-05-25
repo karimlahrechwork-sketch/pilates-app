@@ -29,7 +29,16 @@
   margin-bottom: 4px;
 }
 
-.meta { font-size: 13px; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap; }
+.meta { font-size: 13px; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+.timedBadge {
+  background: var(--sage-light);
+  color: var(--sage-dark);
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 12px;
+  border: 1px solid rgba(122,158,126,0.3);
+}
 
 .summary {
   font-size: 16px;

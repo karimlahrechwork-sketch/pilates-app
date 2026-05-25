@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import StepTimer from '../../components/StepTimer'
 import { exercises } from '../../data/exercises'
 import styles from '../../styles/ExerciseDetail.module.css'
 
@@ -20,6 +20,8 @@ export async function getStaticProps({ params }) {
 export default function ExerciseDetail({ exercise }) {
   if (!exercise) return null
 
+  const timedSteps = exercise.steps.filter(s => s.timer).length
+
   return (
     <Layout>
       <Head><title>Kathrens Pilates — {exercise.name}</title></Head>
@@ -36,6 +38,12 @@ export default function ExerciseDetail({ exercise }) {
               <span>{exercise.level}</span>
               <span>·</span>
               <span>{exercise.targets.join(', ')}</span>
+              {timedSteps > 0 && (
+                <>
+                  <span>·</span>
+                  <span className={styles.timedBadge}>⏱ {timedSteps} timed step{timedSteps !== 1 ? 's' : ''}</span>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -50,6 +58,12 @@ export default function ExerciseDetail({ exercise }) {
               <div className={styles.stepBody}>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDesc}>{step.desc}</p>
+                {step.timer && (
+                  <StepTimer
+                    key={`${exercise.id}-step-${i}`}
+                    seconds={step.timer}
+                  />
+                )}
               </div>
             </div>
           ))}
